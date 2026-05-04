@@ -1,0 +1,190 @@
+@import "tailwindcss" source("../");
+
+@theme {
+  --color-brand-blue: #1E6FD8;
+  --color-brand-navy: #0C1B3A;
+  --color-brand-yellow: #F5C842;
+  --color-brand-orange: #F4A328;
+  --color-brand-purple: #5B3BAE;
+  --color-brand-black: #222222;
+  --color-brand-gray: #F5F7FB;
+
+  --font-heading: 'Barlow Semi Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  color: #222222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading, sans-serif);
+  letter-spacing: -0.01em;
+}
+
+code {
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+@keyframes cuePlanOrbPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+  }
+}
+
+.cue-plan-generating-orb {
+  animation: cuePlanOrbPulse 1.1s ease-in-out infinite;
+}
+
+@keyframes cuePlanAmbientDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate3d(2%, -3%, 0) scale(1.08);
+    opacity: 0.8;
+  }
+}
+
+.cue-plan-ambient {
+  animation: cuePlanAmbientDrift 9s ease-in-out infinite;
+}
+
+@keyframes cuePlanHeroGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 8px var(--hero-glow-soft), 0 0 44px 0 var(--hero-glow-soft);
+  }
+  50% {
+    box-shadow: 0 0 0 14px var(--hero-glow-soft), 0 0 64px 4px var(--hero-glow-strong);
+  }
+}
+
+.cue-plan-hero-orb {
+  animation: cuePlanHeroGlow 3.2s ease-in-out infinite;
+}
+
+.cue-plan-glass {
+  position: relative;
+  isolation: isolate;
+  border-radius: 28px;
+  background: linear-gradient(
+    158deg,
+    color-mix(in srgb, var(--cue-glass-fill), transparent 8%) 0%,
+    var(--cue-glass-fill) 48%,
+    color-mix(in srgb, var(--cue-glass-fill), transparent 22%) 100%
+  );
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  box-shadow:
+    0 30px 80px -30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 var(--cue-glass-highlight, rgba(255, 255, 255, 0.18));
+  overflow: hidden;
+}
+
+.cue-plan-glass > * {
+  position: relative;
+  z-index: 1;
+}
+
+.cue-plan-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.25px;
+  background: linear-gradient(
+    155deg,
+    var(--cue-glass-edge-strong) 0%,
+    var(--cue-glass-edge) 30%,
+    transparent 50%,
+    var(--cue-glass-edge) 72%,
+    var(--cue-glass-edge-strong) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cue-plan-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    130% 70% at 22% -10%,
+    var(--cue-glass-sheen) 0%,
+    transparent 55%
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.cue-plan-glass-row {
+  padding: 1.5rem 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .cue-plan-glass-row {
+    padding: 1.9rem 2.25rem;
+  }
+}
+
+.cue-plan-glass-row + .cue-plan-glass-row {
+  border-top: 1px solid var(--cue-glass-divider);
+}
+
+.cue-plan-glass-header {
+  padding: 1.5rem 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .cue-plan-glass-header {
+    padding: 1.75rem 2.25rem;
+  }
+}
