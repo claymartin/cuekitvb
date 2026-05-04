@@ -228,10 +228,10 @@ function HomePage() {
               className="text-5xl md:text-6xl font-bold leading-[1.05] mb-5 animate-fade-in-up"
               style={{ fontFamily: 'Barlow Semi Condensed, sans-serif', color: '#0C1B3A' }}
             >
-              One glance at your laces — and the cue comes back.
+              Struggle mentally during matches?
             </h1>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed animate-fade-in-up delay-100">
-              Cue Kit turns post-match reflections into a single color-coded shoe strap. The strap has one job: make the mental cue easy to recall in the middle of a match, so you can look down, remember, and use it on the next rally.
+              Cue Kit turns post match reflections into a single color coded shoe strap. The strap has one job: make mental cues easy to recall in the middle of a match, so you can look down, remember, and move on.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in-up delay-200">
               <Link
