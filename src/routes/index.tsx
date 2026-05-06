@@ -189,7 +189,7 @@ function ShoeStrap() {
       style={{ background: '#0C1B3A' }}
     >
       <p className="text-[11px] font-semibold uppercase tracking-widest text-blue-300">
-        Recall your cue
+        Wear your gameplan
       </p>
       <div className="flex gap-2.5 items-end">
         {['#1E6FD8', '#F4A328', '#222222', '#5B3BAE'].map((c, i) => (
@@ -205,7 +205,7 @@ function ShoeStrap() {
         ))}
       </div>
       <p className="text-[11px] text-blue-400 text-center max-w-[180px]">
-        One glance down — the color reminds you which cue to use
+        One glance down, the color reminds you which cue to use
       </p>
     </div>
   )
