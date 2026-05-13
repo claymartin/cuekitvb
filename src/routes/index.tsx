@@ -239,7 +239,7 @@ function HomePage() {
                 className={ctaPrimaryClasses}
                 style={ctaPrimaryStyle}
               >
-                Build your cue plan
+                Build Your Cue Plan
                 <ArrowRight size={16} />
               </Link>
               <a
@@ -247,7 +247,7 @@ function HomePage() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all hover:bg-gray-50"
                 style={{ color: '#1E6FD8', border: '1.5px solid #1E6FD8' }}
               >
-                How Cue Kit works
+                First Time Visitor?
                 <ChevronDown size={16} />
               </a>
             </div>
